@@ -57,12 +57,12 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
     <a-assets>
-        <video id="trex" autoplay loop="true" crossorigin type="video/mp4" preload="auto" src="/image-tracking/trex.jpg"></video>
+        <entity id="trex" autoplay loop="true" crossorigin type="image/jpg" preload="auto" src="/image-tracking/trex.jpg"></entity>
     </a-assets>
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-    <a-nft videohandler
+    <a-nft imagehandler
       type="nft"
       url="/image-tracking/trex"
       smooth="true"

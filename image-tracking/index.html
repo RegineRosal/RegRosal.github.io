@@ -29,7 +29,7 @@
             init: function () {
                 var marker = this.el;
 
-                this.vid = document.querySelector("#trex");
+                this.vid = document.querySelector("trex");
 
                 marker.addEventListener('markerFound', function () {
                     this.vid.play();
@@ -56,13 +56,11 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <a-assets>
-        <entity id="trex" autoplay loop="true" crossorigin type="image/jpg" preload="auto" src="/image-tracking/trex.jpg"></entity>
-    </a-assets>
+    
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-    <a-nft imagehandler
+    <a-nft videohandler
       type="nft"
       url="image-tracking/trex"
       smooth="true"
@@ -72,10 +70,11 @@
     >
       <!-- as a child of the a-nft entity, you can define the content to show. here's a video entity -->
       <a-entity
-       src="#trex" 
-	rotation='90 0 180' 
-	width='640' 
-	height='480' 
+       gltf-model="./trex.gltf"
+        look-at="[gps-camera]"
+        scale=".01 .01 .01"
+        rotation="0 180 0"
+        animation-mixer="loop:repeat"
 	 >
 	</a-entity>
     </a-nft>
